@@ -49,9 +49,9 @@ class palabrasTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("cellHola", forIndexPath: indexPath)
 
         // Configure the cell...
-       
+        var hola :String = "hola"
         
-        cell.textLabel?.text = "que tal?"
+        cell.textLabel?.text = hola
 
         return cell
     }
