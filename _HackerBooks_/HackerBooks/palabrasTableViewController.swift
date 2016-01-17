@@ -9,10 +9,56 @@
 import UIKit
 
 class palabrasTableViewController: UITableViewController {
-   
-    @IBOutlet var UITBV: UITableView!
+
+
+    var words = ["Spanish": ["Hola", "Adios"], "English": ["Hello", "Bye"]]
     
-    var model : Idioma?
+    struct Objects {
+        
+        var sectionName : String!
+        var sectionObjects : [String]!
+    }
+    
+    var objectArray = [Objects]()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        for (key, value) in words {
+            print("\(key) -> \(value)")
+            objectArray.append(Objects(sectionName: key, sectionObjects: value))
+        }
+    }
+    
+    // MARK: - Table view data source
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return objectArray.count
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return objectArray[section].sectionObjects.count
+    }
+    
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("cellHola", forIndexPath: indexPath) as! UITableViewCell
+        
+        // Configure the cell...
+        cell.textLabel?.text = objectArray[indexPath.section].sectionObjects[indexPath.row]
+        return cell
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        return objectArray[section].sectionName
+    }
+}
+   
+   /*
+    
+    //var model : Idioma?
+     var hola : [String] = ["hola","adios"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,8 +68,7 @@ class palabrasTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-        model = Idioma(palabras: ["hola" : "hello"])
+       
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,27 +80,36 @@ class palabrasTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return hola.count
       
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return (model?.palabras.count)!
+        return hola.count
+    
     }
 
    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cellHola", forIndexPath: indexPath)
-
         // Configure the cell...
-        var hola :String = "hola"
+       // var hola : String = "hola"
+      
         
-        cell.textLabel?.text = hola
+        cell.textLabel?.text = hola[indexPath.row]
+        
 
         return cell
     }
  
+
+    
+    
+    
+    
+    
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -100,6 +154,8 @@ class palabrasTableViewController: UITableViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
 
-}
+
+} 
+*/
+*/

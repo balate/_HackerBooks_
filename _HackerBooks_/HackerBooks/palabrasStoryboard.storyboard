@@ -30,13 +30,34 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="hmh-2Y-a89" kind="show" id="aBX-8y-byr"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vcx-Nz-hbn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="325" y="350"/>
+            <point key="canvasLocation" x="207" y="480"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="XvT-GL-Gms">
+            <objects>
+                <viewController id="hmh-2Y-a89" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cF2-bJ-fT1"/>
+                        <viewControllerLayoutGuide type="bottom" id="VHl-VK-yRR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Cdc-OP-W2M">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x1Q-Uh-iRa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="855" y="481"/>
         </scene>
     </scenes>
 </document>
