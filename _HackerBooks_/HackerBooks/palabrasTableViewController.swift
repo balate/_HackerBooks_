@@ -58,19 +58,7 @@ class palabrasTableViewController: UITableViewController {
         return objectArray[section].sectionName
     }
     
-    /*override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        let indexPath :  NSIndexPath = self.tableView.indexPathForSelectedRow!
-        
-        let DestViewController = segue.destinationViewController as! ViewController
-        
-        let objectWords = objectArray[indexPath.section].sectionObjects[indexPath.row]
-        
-        DestViewController.traductor = objectWords
-        
-        //DestViewController.traductor =  objectArray[indexPath.section].sectionObjects[indexPath.row]
-    }*/
-    
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         let indexPath :  NSIndexPath = self.tableView.indexPathForSelectedRow!
@@ -89,7 +77,7 @@ class palabrasTableViewController: UITableViewController {
    
    /*
     
-    //var model : Idioma?
+   
      var hola : [String] = ["hola","adios"]
     
     override func viewDidLoad() {
