@@ -46,6 +46,8 @@ class palabrasTableViewController: UITableViewController {
         
         // Configure the cell...
         cell.textLabel?.text = objectArray[indexPath.section].sectionObjects[indexPath.row]
+        
+        
         return cell
     }
     
@@ -53,6 +55,19 @@ class palabrasTableViewController: UITableViewController {
         
         return objectArray[section].sectionName
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        let indexPath :  NSIndexPath = self.tableView.indexPathForSelectedRow!
+        
+        let DestViewController = segue.destinationViewController as! ViewController
+        
+        let objectWords = objectArray[indexPath.section].sectionObjects[indexPath.row]
+        DestViewController.detail = objectWords
+        
+        //DestViewController.detail =  objectArray[indexPath.section].sectionObjects[indexPath.row]
+    }
+
 }
    
    /*

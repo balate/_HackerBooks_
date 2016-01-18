@@ -14,11 +14,13 @@ import UIKit
 class ViewController: UIViewController {
     
 
+    @IBOutlet weak var TextView: UITextView!
     
     var detail = String ()
     
     override func viewDidLoad() {
 
+        TextView.text = detail
         
         super.viewDidLoad()
         
