@@ -14,13 +14,13 @@ import UIKit
 class ViewController: UIViewController {
     
 
-    @IBOutlet weak var TextView: UITextView!
+    @IBOutlet var TextView: UITextView!
     
-    var detail = String ()
+    var traductor = String ()
     
     override func viewDidLoad() {
 
-        TextView.text = detail
+        TextView.text = traductor
         
         super.viewDidLoad()
         

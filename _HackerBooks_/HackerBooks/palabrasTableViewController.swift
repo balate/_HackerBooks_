@@ -24,6 +24,8 @@ class palabrasTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "El Cutre Traductor"
+        
         for (key, value) in words {
             print("\(key) -> \(value)")
             objectArray.append(Objects(sectionName: key, sectionObjects: value))
@@ -42,7 +44,7 @@ class palabrasTableViewController: UITableViewController {
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cellHola", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("cellHola", forIndexPath: indexPath) 
         
         // Configure the cell...
         cell.textLabel?.text = objectArray[indexPath.section].sectionObjects[indexPath.row]
@@ -56,6 +58,19 @@ class palabrasTableViewController: UITableViewController {
         return objectArray[section].sectionName
     }
     
+    /*override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        let indexPath :  NSIndexPath = self.tableView.indexPathForSelectedRow!
+        
+        let DestViewController = segue.destinationViewController as! ViewController
+        
+        let objectWords = objectArray[indexPath.section].sectionObjects[indexPath.row]
+        
+        DestViewController.traductor = objectWords
+        
+        //DestViewController.traductor =  objectArray[indexPath.section].sectionObjects[indexPath.row]
+    }*/
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         let indexPath :  NSIndexPath = self.tableView.indexPathForSelectedRow!
@@ -63,10 +78,12 @@ class palabrasTableViewController: UITableViewController {
         let DestViewController = segue.destinationViewController as! ViewController
         
         let objectWords = objectArray[indexPath.section].sectionObjects[indexPath.row]
-        DestViewController.detail = objectWords
         
-        //DestViewController.detail =  objectArray[indexPath.section].sectionObjects[indexPath.row]
+        DestViewController.traductor = objectWords
+        
+        //DestViewController.traductor =  objectArray[indexPath.section].sectionObjects[indexPath.row]
     }
+
 
 }
    
