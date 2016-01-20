@@ -15,14 +15,14 @@ class JCOBooks : Equatable{
     let title    : String //label
     let author   : [String] //label
     let tags     : [String] //label
-    var image    : NSData //image
+    var image    : NSURL //image
     var pdf : NSURL //boton que te lleve a un pdfview
     
     //MARK: - Initialization
     init (title : String,
         author  : [String],
         tags    : [String],
-        image   : NSData,
+        image   : NSURL,
         pdf     : NSURL) {
             self.title = title
             self.author = author

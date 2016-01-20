@@ -20,16 +20,38 @@ import UIKit
 */
 
 
-//MARK: - Alias
+//MARK: - Keys
+enum JSONKeys : String {
 
+    case title = "title"
+    case authors = "authors"
+    case tags = "tags"
+    case image_url = "image_url"
+    case pdf_url = "pdf_url"
+    
+    
+}
+
+//MARK: - Structs
+struct StrictJCOBook {
+    
+    let title   : String
+    let authors : NSArray
+    let tags    : NSArray
+    let image   : NSURL
+    let pdf     : NSURL
+    
+}
+
+
+//MARK: - Alias
 typealias JSONObject = AnyObject                //cualquier objeto (el value de un json)
 typealias JSONDictionary = [String:JSONObject]  // un diccionario de String y cualquier objeto
 typealias JSONArray = [JSONDictionary]          // Array de Diccionario
 
 
 
-//MARK: - Errors 
-
+//MARK: - Errors
 enum JSONProcessingErrors : ErrorType{
 
     case WrongURLFormatForJSONResource
@@ -41,4 +63,43 @@ enum JSONProcessingErrors : ErrorType{
 
 
 //MARK: - Decoding 
+
+func decode(JCOBooks json: JSONDictionary ) throws -> StrictJCOBook {
+
+    // simulamos que todo funciona OK y no hay nil
+    guard let urlPdf = json[JSONKeys.pdf_url.rawValue] as? String,
+                pdf_url  = NSURL(string: urlPdf) else {
+    
+        throw JSONProcessingErrors.WrongURLFormatForJSONResource
+    }
+    
+    
+    guard let urlImage = json[JSONKeys.pdf_url.rawValue] as? String,
+        image_url  = NSURL(string: urlImage) else {
+            
+            throw JSONProcessingErrors.WrongURLFormatForJSONResource
+    }
+    
+
+    guard let authors = json[JSONKeys.authors.rawValue] as? NSArray else {
+    
+    throw JSONProcessingErrors.WrongJSONFormat
+    }
+
+    guard let tag = json[JSONKeys.tags.rawValue] as? NSArray else {
+            
+            throw JSONProcessingErrors.WrongJSONFormat
+    }
+    
+    guard let title = json[JSONKeys.title.rawValue]as? String else {
+    
+        throw JSONProcessingErrors.WrongJSONFormat
+    }
+
+
+    
+    //Crear el libro
+    return StrictJCOBook.init(title: title, authors: authors, tags: tag, image: image_url, pdf: pdf_url)
+    
+}
 

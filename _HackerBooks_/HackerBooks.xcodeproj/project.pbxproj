@@ -109,11 +109,13 @@
 				14EF872B1C4C2F0C00B658E8 /* ViewController.swift */,
 			);
 			name = controller;
+			path = HackerBooks;
 			sourceTree = "<group>";
 		};
 		14FD34891C2F32FC00EFC94F = {
 			isa = PBXGroup;
 			children = (
+				14967E921C329D2900E6AFC8 /* controller */,
 				14FD34941C2F32FC00EFC94F /* HackerBooks */,
 				14FD34AB1C2F32FD00EFC94F /* HackerBooksTests */,
 				14FD34B61C2F32FD00EFC94F /* HackerBooksUITests */,
@@ -167,7 +169,6 @@
 		14FD34C51C2F349300EFC94F /* App */ = {
 			isa = PBXGroup;
 			children = (
-				14967E921C329D2900E6AFC8 /* controller */,
 				14967E8F1C31C44400E6AFC8 /* StoryBoards */,
 				14FD34C61C2F373500EFC94F /* Models */,
 			);
