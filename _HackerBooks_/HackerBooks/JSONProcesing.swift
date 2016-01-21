@@ -64,7 +64,7 @@ enum JSONProcessingErrors : ErrorType{
 
 //MARK: - Decoding 
 
-func decode(JCOBooks json: JSONDictionary ) throws -> StrictJCOBook {
+func decode(JCOBook json: JSONDictionary ) throws -> StrictJCOBook {
 
     // simulamos que todo funciona OK y no hay nil
     guard let urlPdf = json[JSONKeys.pdf_url.rawValue] as? String,
@@ -104,6 +104,35 @@ func decode(JCOBooks json: JSONDictionary ) throws -> StrictJCOBook {
 }
 
 
+func decode(JCOBooks json: JSONArray) -> [StrictJCOBook] {
+
+    var results = [StrictJCOBook] ()
+    
+    do {
+        
+    //Patearse todo el JSONArray
+    for dict in json {
+        
+        print (dict)
+        
+        //JSONDict que ve JSONdict que convierte en StrictJCOBook
+        let s = try decode(JCOBook: dict)
+        
+        //se añade
+        results.append(s)
+        
+        }
+    }catch {
+        
+        fatalError("EL JSON esta peor que tu...")
+        
+    }
+    
+    //Devuelvo el array de StrictJCOBook
+    return results
+}
+
+
 
 
 extension JCOBooks {
@@ -113,7 +142,7 @@ extension JCOBooks {
         
         //Llamar al inicializador designado pasandole el StrictJCOBook
         self.init(
-            title : c.title,
+            title : c.title ,
             author  : c.authors as! [String] , // tengo mis dudas si esto tirará
             tags    : c.tags as! [String],
             image   : c.image,
