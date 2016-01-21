@@ -14,6 +14,8 @@
 		14967E941C329D5500E6AFC8 /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14967E931C329D5500E6AFC8 /* BookDetailViewController.swift */; };
 		14EF872C1C4C2F0C00B658E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EF872B1C4C2F0C00B658E8 /* ViewController.swift */; };
 		14EF872E1C4EC5DE00B658E8 /* JSONProcesing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EF872D1C4EC5DE00B658E8 /* JSONProcesing.swift */; };
+		14EF87301C5027CB00B658E8 /* FoundationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EF872F1C5027CB00B658E8 /* FoundationExtension.swift */; };
+		14EF87321C50286300B658E8 /* books_readable.json in Resources */ = {isa = PBXBuildFile; fileRef = 14EF87311C50286300B658E8 /* books_readable.json */; };
 		14FD34961C2F32FC00EFC94F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD34951C2F32FC00EFC94F /* AppDelegate.swift */; };
 		14FD34981C2F32FC00EFC94F /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD34971C2F32FC00EFC94F /* MasterViewController.swift */; };
 		14FD349A1C2F32FC00EFC94F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FD34991C2F32FC00EFC94F /* DetailViewController.swift */; };
@@ -50,6 +52,8 @@
 		14967E931C329D5500E6AFC8 /* BookDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 		14EF872B1C4C2F0C00B658E8 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		14EF872D1C4EC5DE00B658E8 /* JSONProcesing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONProcesing.swift; sourceTree = "<group>"; };
+		14EF872F1C5027CB00B658E8 /* FoundationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationExtension.swift; sourceTree = "<group>"; };
+		14EF87311C50286300B658E8 /* books_readable.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = books_readable.json; sourceTree = "<group>"; };
 		14FD34921C2F32FC00EFC94F /* HackerBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackerBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14FD34951C2F32FC00EFC94F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14FD34971C2F32FC00EFC94F /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -109,13 +113,11 @@
 				14EF872B1C4C2F0C00B658E8 /* ViewController.swift */,
 			);
 			name = controller;
-			path = HackerBooks;
 			sourceTree = "<group>";
 		};
 		14FD34891C2F32FC00EFC94F = {
 			isa = PBXGroup;
 			children = (
-				14967E921C329D2900E6AFC8 /* controller */,
 				14FD34941C2F32FC00EFC94F /* HackerBooks */,
 				14FD34AB1C2F32FD00EFC94F /* HackerBooksTests */,
 				14FD34B61C2F32FD00EFC94F /* HackerBooksUITests */,
@@ -169,8 +171,11 @@
 		14FD34C51C2F349300EFC94F /* App */ = {
 			isa = PBXGroup;
 			children = (
+				14967E921C329D2900E6AFC8 /* controller */,
+				14EF87311C50286300B658E8 /* books_readable.json */,
 				14967E8F1C31C44400E6AFC8 /* StoryBoards */,
 				14FD34C61C2F373500EFC94F /* Models */,
+				14EF872F1C5027CB00B658E8 /* FoundationExtension.swift */,
 			);
 			name = App;
 			sourceTree = "<group>";
@@ -292,6 +297,7 @@
 				14FD34A21C2F32FD00EFC94F /* LaunchScreen.storyboard in Resources */,
 				14FD349F1C2F32FD00EFC94F /* Assets.xcassets in Resources */,
 				14967E911C31C5D400E6AFC8 /* BookDetailsStoryboard.storyboard in Resources */,
+				14EF87321C50286300B658E8 /* books_readable.json in Resources */,
 				145154131C4967FA00E508AD /* palabrasStoryboard.storyboard in Resources */,
 				14FD349D1C2F32FD00EFC94F /* Main.storyboard in Resources */,
 			);
@@ -326,6 +332,7 @@
 				14FD34981C2F32FC00EFC94F /* MasterViewController.swift in Sources */,
 				14FD34961C2F32FC00EFC94F /* AppDelegate.swift in Sources */,
 				14FD34C81C2F378C00EFC94F /* JCOBooks.swift in Sources */,
+				14EF87301C5027CB00B658E8 /* FoundationExtension.swift in Sources */,
 				14EF872E1C4EC5DE00B658E8 /* JSONProcesing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

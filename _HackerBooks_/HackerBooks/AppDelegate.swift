@@ -23,6 +23,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         //let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
         //navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem()
       //splitViewController.delegate = self
+        
+        do {
+            
+            if let url = NSBundle.mainBundle().URLForResource("books_readable.json"),
+                    data = NSData(contentsOfURL: url),
+                    JsonBook = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? JSONArray {
+                        
+                        
+                        //TDD PARA POBRES
+         /*
+                        //Ver un JSONObject que este dentro del JSONArray
+                        
+                        // faltaria hacerme un inicilizador de books con el arrayOfBooks y asignarselo a gitJSON
+                        let gitJSON =
+                        
+                        do{
+                            
+                            let stricGit = try decode(JCOBooks: gitJSON )
+                            let ProGit = JCOBooks(stricGit)
+                    
+                            
+                        }catch{
+                        
+                        print ("la cagastes al extraer el JSON")
+                        
+                        }
+                        
+                      
+                */
+            }
+            
+            
+        }catch{
+            
+            print("la cagamos...al entrar en el JSON")
+            
+        }
+        
+        
         return true
     }
 

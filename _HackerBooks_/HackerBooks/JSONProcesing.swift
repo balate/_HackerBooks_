@@ -100,6 +100,31 @@ func decode(JCOBooks json: JSONDictionary ) throws -> StrictJCOBook {
     
     //Crear el libro
     return StrictJCOBook.init(title: title, authors: authors, tags: tag, image: image_url, pdf: pdf_url)
+   
+}
+
+
+
+
+extension JCOBooks {
+    
+    //Init que acepta los parametros empaquetados en un StrictJCOBook
+    convenience init (StrictJCOBook c: StrictJCOBook){
+        
+        //Llamar al inicializador designado pasandole el StrictJCOBook
+        self.init(
+            title : c.title,
+            author  : c.authors as! [String] , // tengo mis dudas si esto tirará
+            tags    : c.tags as! [String],
+            image   : c.image,
+            pdf     : c.pdf)
+        
+    }
     
 }
+
+
+
+
+
 
