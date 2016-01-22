@@ -45,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		141455C01C529F6D009D0E1B /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		145154121C4967FA00E508AD /* palabrasStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = palabrasStoryboard.storyboard; sourceTree = "<group>"; };
 		145154141C4968B100E508AD /* palabrasTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = palabrasTableViewController.swift; sourceTree = "<group>"; };
 		14967E8B1C3063AE00E6AFC8 /* JCOLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JCOLibrary.swift; sourceTree = "<group>"; };
@@ -118,6 +119,7 @@
 		14FD34891C2F32FC00EFC94F = {
 			isa = PBXGroup;
 			children = (
+				141455C01C529F6D009D0E1B /* MyPlayground.playground */,
 				14FD34941C2F32FC00EFC94F /* HackerBooks */,
 				14FD34AB1C2F32FD00EFC94F /* HackerBooksTests */,
 				14FD34B61C2F32FD00EFC94F /* HackerBooksUITests */,

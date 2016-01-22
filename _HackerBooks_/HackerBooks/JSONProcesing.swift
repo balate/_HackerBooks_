@@ -124,7 +124,7 @@ func decode(JCOBooks json: JSONArray) -> [StrictJCOBook] {
         }
     }catch {
         
-        fatalError("EL JSON esta peor que tu...")
+        fatalError("El JSON esta peor que tu...")
         
     }
     
@@ -148,6 +148,28 @@ extension JCOBooks {
             image   : c.image,
             pdf     : c.pdf)
         
+    }
+    
+}
+
+extension JCOLibrary {
+
+
+    //inicializador para converir un array de StrictJCOBook en un JCOLibrary
+    convenience init(books bk: [StrictJCOBook]){
+    
+        var book = [JCOBooks]()
+        
+        for each in bk{
+        // Patearse el array de StrictJCOBooks
+            let c = JCOBooks(StrictJCOBook: each)
+        
+        //almacenar cada elemento (libro) en el Array
+        book.append(c)
+        
+        }
+        
+        self.init(arrayOfBooks: book)
     }
     
 }

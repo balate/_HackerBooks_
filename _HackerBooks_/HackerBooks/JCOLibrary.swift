@@ -15,7 +15,7 @@ class JCOLibrary {
     //MARK: - Properties
     static let urlHttps = "https://t.co/K9ziV0z3SJ"
     static let urlLocal = "JCOBooks"
-    let books   : [JCOBooks]
+    var books   : [JCOBooks]
     var tags    : [String]
     var bookCount: Int{
         
@@ -27,13 +27,23 @@ class JCOLibrary {
     
     
     //MARK: - Initialization
-    init (arrayOfBooks books:[JCOBooks], tags: [String], bookCount: Int){
+init (arrayOfBooks books:[JCOBooks], tags: [String], bookCount: Int){
         
         self.books = books
         self.tags = tags
         self.bookCount
         
     }
+    
+    convenience init(books:[JCOBooks]){
+        
+        self.init (arrayOfBooks: books,
+            tags: tags,
+            bookCount: bookCount)
+
+    }
+    
+    
     
     
     //MARK - Methods
