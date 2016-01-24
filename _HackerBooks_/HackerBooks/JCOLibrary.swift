@@ -25,6 +25,10 @@ class JCOLibrary {
         }
     }
     
+    init (){
+        books = []
+        tags = []
+    }
     
     //MARK: - Initialization
 init (arrayOfBooks books:[JCOBooks], tags: [String], bookCount: Int){
@@ -35,14 +39,28 @@ init (arrayOfBooks books:[JCOBooks], tags: [String], bookCount: Int){
         
     }
     
-    convenience init(books:[JCOBooks]){
+
+     /* convenience init(books:[JCOBooks]){
         
         self.init (arrayOfBooks: books,
             tags: tags,
             bookCount: bookCount)
 
     }
+    */
+    /*
+
+    extension JCOLibrary {
+        
+        convenience init (arrayOfBooks books: [JCOBooks]){
+            
+            let tags = JCOLibrary.booksForTag(arrayOfBooks: books)
+        }
+        
     
+*/
+    
+
     
     
     
@@ -117,6 +135,8 @@ init (arrayOfBooks books:[JCOBooks], tags: [String], bookCount: Int){
         
     }
     
+
+
     
 }
 

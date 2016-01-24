@@ -152,10 +152,11 @@ extension JCOBooks {
     
 }
 
+/*
 extension JCOLibrary {
 
 
-    //inicializador para converir un array de StrictJCOBook en un JCOLibrary
+    //inicializador para convertir un array de StrictJCOBook en un JCOLibrary
     convenience init(books bk: [StrictJCOBook]){
     
         var book = [JCOBooks]()
@@ -169,10 +170,10 @@ extension JCOLibrary {
         
         }
         
-        self.init(arrayOfBooks: book)
+       // self.init(arrayOfBooks: book)
     }
-    
-}
+
+}*/
 
 
 
