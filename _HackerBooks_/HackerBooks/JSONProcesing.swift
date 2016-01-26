@@ -152,7 +152,7 @@ extension JCOBooks {
     
 }
 
-/*
+
 extension JCOLibrary {
 
 
@@ -170,10 +170,10 @@ extension JCOLibrary {
         
         }
         
-       // self.init(arrayOfBooks: book)
+          self.init(arrayOfBooks: book, tags: [], bookCount: 1)
     }
 
-}*/
+}
 
 
 

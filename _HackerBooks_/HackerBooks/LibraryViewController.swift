@@ -10,24 +10,22 @@ import UIKit
 
 class LibraryViewController: UITableViewController {
     
-    var model : JCOBooks?
+    //var model : JCOBooks?
+    var model : JCOLibrary?
     
     
     // funcion que extrae el JSON de libros
     private func decodeJSON() ->[StrictJCOBook]?{
        
-        var result : [StrictJCOBook]? = nil
+        let result : [StrictJCOBook]? = nil
         
         
         do{
-        
-            //Obtener la url del ficehero
-            //leemos el fichero JSON a un NSData, esto puede salir mal
-            //Parseamos el fichero
-            if let url = NSBundle.mainBundle().URLForResource("books_readable.json"),
-                data = NSData(contentsOfURL: url),
-                bookArray = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? JSONArray{
-                    
+
+          
+            if let url = NSBundle.mainBundle().URLForResource("books_readable.json"), //Obtener la url del ficehero
+                data = NSData(contentsOfURL: url), //leemos el fichero JSON a un NSData
+                bookArray = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? JSONArray{   //Parseamos el fichero
                     
                     //todo es cojonudo!
                     return decode(JCOBooks: bookArray)
@@ -50,17 +48,10 @@ class LibraryViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-        
         //crear modelo
         if let books = decodeJSON(){
           //model = JCOLibrary(arrayOfBooks: books, tags: nil, bookCount: nil)
-            model = JCOLibrary(book: books)
+            model = JCOLibrary(books: books)
         
         }else{
         

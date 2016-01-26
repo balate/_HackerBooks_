@@ -40,29 +40,16 @@ init (arrayOfBooks books:[JCOBooks], tags: [String], bookCount: Int){
     }
     
 
-     /* convenience init(books:[JCOBooks]){
+    
+    convenience init(books:[JCOBooks]){
         
         self.init (arrayOfBooks: books,
-            tags: tags,
-            bookCount: bookCount)
-
+            tags: [],
+            bookCount: books.count)
+        
     }
-    */
-    /*
 
-    extension JCOLibrary {
-        
-        convenience init (arrayOfBooks books: [JCOBooks]){
-            
-            let tags = JCOLibrary.booksForTag(arrayOfBooks: books)
-        }
-        
-    
-*/
-    
-
-    
-    
+  
     
     //MARK - Methods
     
