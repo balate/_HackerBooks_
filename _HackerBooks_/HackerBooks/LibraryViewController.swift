@@ -50,7 +50,7 @@ class LibraryViewController: UITableViewController {
 
         //crear modelo
         if let books = decodeJSON(){
-          //model = JCOLibrary(arrayOfBooks: books, tags: nil, bookCount: nil)
+          
             model = JCOLibrary(books: books)
         
         }else{

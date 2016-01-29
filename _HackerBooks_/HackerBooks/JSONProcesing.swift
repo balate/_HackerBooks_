@@ -36,7 +36,7 @@ enum JSONKeys : String {
 struct StrictJCOBook {
     
     let title   : String
-    let authors : NSArray
+    let authors : [String]
     let tags    : NSArray
     let image   : NSURL
     let pdf     : NSURL
@@ -81,10 +81,12 @@ func decode(JCOBook json: JSONDictionary ) throws -> StrictJCOBook {
     }
     
 
-    guard let authors = json[JSONKeys.authors.rawValue] as? NSArray else {
+    guard let authorsString = json[JSONKeys.authors.rawValue] as? String else {
     
     throw JSONProcessingErrors.WrongJSONFormat
     }
+    
+   let authors = authorsString.componentsSeparatedByString(",")
 
     guard let tag = json[JSONKeys.tags.rawValue] as? NSArray else {
             
@@ -96,10 +98,16 @@ func decode(JCOBook json: JSONDictionary ) throws -> StrictJCOBook {
         throw JSONProcessingErrors.WrongJSONFormat
     }
 
+    
+ 
 
     
     //Crear el libro
-    return StrictJCOBook.init(title: title, authors: authors, tags: tag, image: image_url, pdf: pdf_url)
+    return StrictJCOBook.init(title: title,
+        authors: authors,
+        tags: tag,
+        image: image_url,
+        pdf: pdf_url)
    
 }
 
@@ -143,7 +151,7 @@ extension JCOBooks {
         //Llamar al inicializador designado pasandole el StrictJCOBook
         self.init(
             title : c.title ,
-            author  : c.authors as! [String] , // tengo mis dudas si esto tirará
+            authors  : c.authors , // tengo mis dudas si esto tirará
             tags    : c.tags as! [String],
             image   : c.image,
             pdf     : c.pdf)

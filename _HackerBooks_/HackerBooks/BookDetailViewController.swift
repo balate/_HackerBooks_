@@ -21,7 +21,7 @@ class BookDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.model = JCOBooks(title: "titulo", author: ["autor1","autor2"], tags: ["tag1","tag2"], image: NSURL(), pdf: NSURL())
+        self.model = JCOBooks(title: "titulo", authors: ["autor1","autor2"], tags: ["tag1","tag2"], image: NSURL(), pdf: NSURL())
         //me quedo por aqui pendiente de implementar....
         //self.authorlabel.text = self.model?.descAuthor()
         // Do any additional setup after loading the view.
