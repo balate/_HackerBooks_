@@ -16,7 +16,7 @@ class JCOLibrary {
     static let urlHttps = "https://t.co/K9ziV0z3SJ"
     static let urlLocal = "JCOBooks"
     var books   : [JCOBooks]
-    var tags    : [String]
+    var tags    : [JCOTags]?
     var bookCount: Int{
         
         get {
@@ -25,13 +25,23 @@ class JCOLibrary {
         }
     }
     
+    var countTags: Int{
+        get{
+            if let tags = tags{
+                return tags.count
+            }
+            return 0
+        }
+    }
+    
+    
     init (){
         books = []
         tags = []
     }
     
     //MARK: - Initialization
-init (arrayOfBooks books:[JCOBooks], tags: [String], bookCount: Int){
+    init (arrayOfBooks books:[JCOBooks], tags: [JCOTags], bookCount: Int){
         
         self.books = books
         self.tags = tags
@@ -40,16 +50,30 @@ init (arrayOfBooks books:[JCOBooks], tags: [String], bookCount: Int){
     }
     
 
-    
-    convenience init(books:[JCOBooks]){
+     convenience init(books:[JCOBooks]){
         
         self.init (arrayOfBooks: books,
             tags: [],
             bookCount: books.count)
-        
+
     }
 
-  
+    /*
+
+    extension JCOLibrary {
+        
+        convenience init (arrayOfBooks books: [JCOBooks]){
+            
+            let tags = JCOLibrary.booksForTag(arrayOfBooks: books)
+        }
+        
+    
+*/
+    
+   
+
+    
+    
     
     //MARK - Methods
     
@@ -96,17 +120,18 @@ init (arrayOfBooks books:[JCOBooks], tags: [String], bookCount: Int){
     }
     
     //function for tag in the position 'index'
-    func tagAtIndex(Index: Int)->String?{
+    func tagAtIndex(Index: Int)->JCOTags?{
         
-        return self.tags [Index]
+        return self.tags! [Index]
         
     }
     
-    //function sorted tags
-    func tagSorted()->[String]{
+   /* //function sorted tags
+    func tagSorted()->JCOTags{
         
         return self.tags.sort(sortTags)
     }
+    */
     
     // comparable tags
     func sortTags(s1 : String, _ s2 : String) -> Bool{

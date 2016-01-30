@@ -37,7 +37,7 @@ struct StrictJCOBook {
     
     let title   : String
     let authors : [String]
-    let tags    : NSArray
+    let tags    : [String]
     let image   : NSURL
     let pdf     : NSURL
     
@@ -81,14 +81,18 @@ func decode(JCOBook json: JSONDictionary ) throws -> StrictJCOBook {
     }
     
 
-    guard let authorsString = json[JSONKeys.authors.rawValue] as? String else {
+    guard let authors = json[JSONKeys.authors.rawValue] as? String else {
     
     throw JSONProcessingErrors.WrongJSONFormat
     }
     
-   let authors = authorsString.componentsSeparatedByString(",")
-
-    guard let tag = json[JSONKeys.tags.rawValue] as? NSArray else {
+  
+    
+    //tag1, tag2,... appendbystring(", ")
+    //array de cada tag [tag1,tag2,tag3] una variable string
+    //crearte un objeto JCOtag para cada clave del array
+    //se lo metes al struct en la clave tags:
+    guard let tag = json[JSONKeys.tags.rawValue] as? String else {
             
             throw JSONProcessingErrors.WrongJSONFormat
     }
@@ -98,14 +102,12 @@ func decode(JCOBook json: JSONDictionary ) throws -> StrictJCOBook {
         throw JSONProcessingErrors.WrongJSONFormat
     }
 
-    
- 
 
     
     //Crear el libro
     return StrictJCOBook.init(title: title,
-        authors: authors,
-        tags: tag,
+        authors: authors.componentsSeparatedByString(","),
+        tags: tag.componentsSeparatedByString(","),
         image: image_url,
         pdf: pdf_url)
    
@@ -128,6 +130,7 @@ func decode(JCOBooks json: JSONArray) -> [StrictJCOBook] {
         
         //se añade
         results.append(s)
+         print(results)
         
         }
     }catch {
@@ -135,7 +138,7 @@ func decode(JCOBooks json: JSONArray) -> [StrictJCOBook] {
         fatalError("El JSON esta peor que tu...")
         
     }
-    
+   
     //Devuelvo el array de StrictJCOBook
     return results
 }
@@ -151,8 +154,8 @@ extension JCOBooks {
         //Llamar al inicializador designado pasandole el StrictJCOBook
         self.init(
             title : c.title ,
-            authors  : c.authors , // tengo mis dudas si esto tirará
-            tags    : c.tags as! [String],
+            author  : c.authors ,
+            tags    : c.tags,
             image   : c.image,
             pdf     : c.pdf)
         
@@ -177,8 +180,8 @@ extension JCOLibrary {
         book.append(c)
         
         }
-        
-          self.init(arrayOfBooks: book, tags: [], bookCount: 1)
+        self.init(arrayOfBooks: book, tags: [], bookCount: 1)
+       
     }
 
 }

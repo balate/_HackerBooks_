@@ -13,19 +13,19 @@ class JCOBooks : Equatable{
 
     //MARK: - Properties
     let title    : String //label
-    let authors   : [String] //label
+    let author   : [String] //label
     let tags     : [String] //label
     var image    : NSURL //image
     var pdf : NSURL //boton que te lleve a un pdfview
     
     //MARK: - Initialization
     init (title : String,
-        authors  : [String],
+        author  : [String],
         tags    : [String],
         image   : NSURL,
         pdf     : NSURL) {
             self.title = title
-            self.authors = authors
+            self.author = author
             self.tags = tags
             self.image = image
             self.pdf = pdf
@@ -39,7 +39,7 @@ class JCOBooks : Equatable{
         
         get {
             
-            return "\(title)\(authors)\(tags)\(pdf)"
+            return "\(title)\(author)\(tags)\(pdf)"
             
         }
         
@@ -47,7 +47,7 @@ class JCOBooks : Equatable{
     
     var proxyForSorting : String {
     
-        return "\(title)\(authors)\(tags)"
+        return "\(title)\(author)\(tags)"
     
     }
     

@@ -26,3 +26,8 @@ typealias JSONArray = [JSONDictionary]
 
 
 
+let str = "sunday, monday, happy days"
+print(str.capitalizedString)
+
+
+
