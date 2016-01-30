@@ -47,6 +47,7 @@ class palabrasTableViewController: UITableViewController {
         
         // Configure the cell...
         cell.textLabel?.text = objectArray[indexPath.row].sectionName
+     
         
         
         return cell

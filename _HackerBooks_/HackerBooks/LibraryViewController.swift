@@ -49,18 +49,14 @@ class LibraryViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        title = "Books List"
+        title = " HackerBooks List "
+        
         //crear modelo
         if let books = decodeJSON(){
-         // model = JCOLibrary(arrayOfBooks: books, tags: nil, bookCount: nil)
+         
             model = JCOLibrary(books: books)
+           
         
         }else{
         
@@ -77,33 +73,36 @@ class LibraryViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        if let countTags = model?.countTags{
-            return countTags
-        }
         
-        return 0
+       //return (model?.countTags)!
+      return 30
+    
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+      
         
-        if let tag = model?.tagAtIndex(section){
+       /* if let tag = model?.tagAtIndex(section){
         
             return model!.bookCountForTag(tag.name)
         }
         
-        return 0
+        return 0*/
+        return 30
+     
     }
 
   
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("LibraryCell", forIndexPath: indexPath)
-
-        //cell.textLabel?.text = model?.tagAtIndex(indexPath.section)
+        let cell = tableView.dequeueReusableCellWithIdentifier("BookId", forIndexPath: indexPath)
         
-        cell.textLabel?.text = "ola q ases"
+       let book = model?.books[indexPath.row]
         
         
+        cell.textLabel?.text = book!.title
+        cell.detailTextLabel?.text = book?.author.joinWithSeparator(",")
+        
+    
 
         return cell
     }

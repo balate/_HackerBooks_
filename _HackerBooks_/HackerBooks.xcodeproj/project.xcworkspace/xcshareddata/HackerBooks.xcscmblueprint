@@ -1,4 +1,5 @@
 {
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "8C32FAB0C36E161AC54A9B4AFBF661D107C1AA46",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
@@ -8,12 +9,12 @@
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "826B80A5-EE0B-4D8E-9EAC-454079306A7D",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "20FCA1182E389E00B58E496C98A92ACC325B8981" : "..",
-    "8C32FAB0C36E161AC54A9B4AFBF661D107C1AA46" : ""
+    "20FCA1182E389E00B58E496C98A92ACC325B8981" : "",
+    "8C32FAB0C36E161AC54A9B4AFBF661D107C1AA46" : "Practica\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "HackerBooks",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
-  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "HackerBooks.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "_HackerBooks_\/HackerBooks.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/balate\/Ejercicio-con-UITableView.git",
