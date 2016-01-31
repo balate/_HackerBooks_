@@ -28,6 +28,10 @@ class JCOTags: Equatable, Comparable,Hashable {
         self.name = name
     }
     
+    convenience init(){
+        self.init(name: "hola")
+    }
+    
     //Normalize Name
     func normalizedName() -> String {
     
@@ -57,21 +61,11 @@ class JCOTags: Equatable, Comparable,Hashable {
 //MARK: - Operators
 func ==(lhs:JCOTags, rhs:JCOTags) -> Bool{
     
-    //compared if the same object
-    guard !(lhs == rhs) else{
-        
+    if (lhs.name == rhs.name){
         return true
-    }
-    
-    //compared if the same class
-    guard  lhs.dynamicType == rhs.dynamicType else{
-        
+    }else{
         return false
-        
     }
-    
-    //case generic
-    return  (lhs.proxyForComparison == rhs.proxyForComparison)
     
     
 }

@@ -107,21 +107,11 @@ class JCOBooks : Equatable{
 
 func ==(lhs:JCOBooks, rhs:JCOBooks) -> Bool{
 
-    //compared if the same object
-    guard !(lhs == rhs) else{
-    
+    if (lhs.title == rhs.title){
         return true
-    }
-    
-    //compared if the same class
-    guard  lhs.dynamicType == rhs.dynamicType else{
-    
+    }else{
         return false
-        
     }
-    
-    //case generic
-    return  (lhs.proxyForComparison == rhs.proxyForComparison)
     
     
 }

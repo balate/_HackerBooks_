@@ -15,60 +15,34 @@ class JCOLibrary {
     //MARK: - Properties
     static let urlHttps = "https://t.co/K9ziV0z3SJ"
     static let urlLocal = "JCOBooks"
-    var books   : [JCOBooks]
-    var tags    : [JCOTags]?
-    var bookCount: Int{
-        
-        get {
-            let count: Int = self.books.count
-            return count
-        }
-    }
+    var library : [JCOTags : [JCOBooks]]
     
     var countTags: Int{
         get{
-            if let tags = tags{
-                return tags.count
-            }
-            return 0
+            return self.library.keys.count
         }
-    }
-    
-    
-    init (){
-        books = []
-        tags = []
     }
     
     //MARK: - Initialization
-    init (arrayOfBooks books:[JCOBooks], tags: [JCOTags], bookCount: Int){
+    init (arrayOfBooks books:[JCOBooks]){
         
-        self.books = books
-        self.tags = tags
-        self.bookCount
+        //del array de libros tenemos que pasar a un diccionario {tag(clave) -> array de libros(valor)}
+        self.library = [ JCOTags : [JCOBooks]]()
         
-    }
-    
-
-     convenience init(books:[JCOBooks]){
-        
-        self.init (arrayOfBooks: books,
-            tags: [],
-            bookCount: books.count)
-
-    }
-
-    /*
-
-    extension JCOLibrary {
-        
-        convenience init (arrayOfBooks books: [JCOBooks]){
+        for book in books{
+            for tagInBook in book.tags{
+                
+                if (self.library.keys.contains(JCOTags(name: tagInBook))){
+                    self.library[JCOTags(name: tagInBook)]?.append(book)
+                }else{
+                    self.library[JCOTags(name: tagInBook)] = [book]
+                }
+                
+            }
             
-            let tags = JCOLibrary.booksForTag(arrayOfBooks: books)
         }
         
-    
-*/
+    }
     
    
 
@@ -77,26 +51,21 @@ class JCOLibrary {
     
     //MARK - Methods
     
-    //function number books for theme. Note: if not exist tag, return 0
-    func bookCountForTag (tag: String)->Int {
-        
-        if (self.boookForTag(tag)?.count == nil){
-            return 0
-        }else{
-            return (self.boookForTag(tag)?.count)!
-        }
-    }
-    
     
     //function array of books instaces about theme. The book can content one o more theme if not return nil
-    func boookForTag (tag: String)->[JCOBooks]?{
+    func booksForTag (tag: String)->[JCOBooks]?{
         
-        var books : [JCOBooks] = []
         
-        for element in self.books{
-            if (element.tags.contains(tag)){
-                books.append(element)
-                }
+        var books : [JCOBooks]
+        
+        //si existe el tag que nos piden devolvemos todos sus libros sino que le peten
+        if (self.library.keys.contains(JCOTags(name: tag))){
+            
+            books = self.library[JCOTags(name: tag)]!
+            
+        }else{
+            
+            return nil
         }
         
         books.sortInPlace({ (s1: JCOBooks, s2: JCOBooks) -> Bool in
@@ -112,7 +81,7 @@ class JCOLibrary {
     //function for book in the position 'index' by a tag
     func bookAtIndex(Index: Int, Tag: String)->JCOBooks?{
         
-        if let booksForTag = self.boookForTag(Tag){
+        if let booksForTag = self.booksForTag(Tag){
             return booksForTag [Index]
         }
         
@@ -122,33 +91,32 @@ class JCOLibrary {
     //function for tag in the position 'index'
     func tagAtIndex(Index: Int)->JCOTags?{
         
-        return self.tags! [Index]
+        return tagSorted()[Index]
         
     }
     
-   /* //function sorted tags
-    func tagSorted()->JCOTags{
+    //function sorted tags
+    func tagSorted()->[JCOTags]{
         
-        return self.tags.sort(sortTags)
+        var keys : [JCOTags]
+        keys = Array (self.library.keys)
+        keys.sortInPlace({(s1 : JCOTags, s2 : JCOTags) -> Bool in
+            
+            
+            if (s1.name.lowercaseString == "Favorite".lowercaseString){
+                return true
+            }else if (s2.name.lowercaseString == "Favorite".lowercaseString){
+                return false
+            }else{
+                return s1 > s2
+            }
+            
+            }
+        )
+        
+        return keys
+        
     }
-    */
-    
-    // comparable tags
-    func sortTags(s1 : String, _ s2 : String) -> Bool{
-        
-        
-        if (s1.lowercaseString == "Favorite".lowercaseString){
-            return true
-        }else if (s2.lowercaseString == "Favorite".lowercaseString){
-            return false
-        }else{
-            return s1 > s2
-        }
-        
-    }
-    
-
-
     
 }
 

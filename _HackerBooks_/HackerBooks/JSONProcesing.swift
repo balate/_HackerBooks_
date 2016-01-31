@@ -180,8 +180,9 @@ extension JCOLibrary {
         book.append(c)
         
         }
-        self.init(arrayOfBooks: book, tags: [], bookCount: 1)
-       
+
+        self.init(arrayOfBooks: book)
+        
     }
 
 }

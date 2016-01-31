@@ -74,48 +74,35 @@ class LibraryViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         
-       //return (model?.countTags)!
-      return 30
+       return (model?.library.keys.count)!
     
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
       
+        let tag = self.model?.tagAtIndex(section)!
         
-       /* if let tag = model?.tagAtIndex(section){
-        
-            return model!.bookCountForTag(tag.name)
-        }
-        
-        return 0*/
-        return 30
+        return (self.model?.booksForTag(tag!.name)!.count)!
      
     }
 
-  
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        return self.model?.tagAtIndex(section)!.name
+        
+    }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("BookId", forIndexPath: indexPath)
         
-       let book = model?.books[indexPath.row]
-        
+        let tag = self.model?.tagAtIndex(indexPath.section)!
+        let book = self.model?.booksForTag(tag!.name)! [indexPath.row]
         
         cell.textLabel?.text = book!.title
         cell.detailTextLabel?.text = book?.author.joinWithSeparator(",")
         
-    
 
         return cell
     }
     
-
-        /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
