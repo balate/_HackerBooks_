@@ -92,13 +92,20 @@ class LibraryViewController: UITableViewController {
         
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("BookId", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("BookId", forIndexPath: indexPath) as! BookCellViewCell
         
         let tag = self.model?.tagAtIndex(indexPath.section)!
         let book = self.model?.booksForTag(tag!.name)! [indexPath.row]
         
-        cell.textLabel?.text = book!.title
-        cell.detailTextLabel?.text = book?.author.joinWithSeparator(",")
+        //cell.textLabel?.text = book!.title
+        //cell.detailTextLabel?.text = book?.author.joinWithSeparator(",")
+        
+        cell.titleCell.text = book!.title
+        cell.authorCell.text = book?.author.joinWithSeparator(", ")
+        
+        if let data = NSData(contentsOfURL: (book?.image)!){
+            cell.imageCell.image = UIImage(data: data)
+        }
         
 
         return cell

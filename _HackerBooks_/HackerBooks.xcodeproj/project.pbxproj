@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1401BEEA1C60140300F706F4 /* BookCellViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1401BEE91C60140300F706F4 /* BookCellViewCell.swift */; };
 		141CA8C11C53F3130023D94E /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141CA8C01C53F3130023D94E /* LibraryViewController.swift */; };
 		145154131C4967FA00E508AD /* palabrasStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 145154121C4967FA00E508AD /* palabrasStoryboard.storyboard */; };
 		145154151C4968B100E508AD /* palabrasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145154141C4968B100E508AD /* palabrasTableViewController.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1401BEE91C60140300F706F4 /* BookCellViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCellViewCell.swift; sourceTree = "<group>"; };
 		141455C01C529F6D009D0E1B /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		141CA8C01C53F3130023D94E /* LibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		145154121C4967FA00E508AD /* palabrasStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = palabrasStoryboard.storyboard; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				145154141C4968B100E508AD /* palabrasTableViewController.swift */,
 				14EF872B1C4C2F0C00B658E8 /* ViewController.swift */,
 				141CA8C01C53F3130023D94E /* LibraryViewController.swift */,
+				1401BEE91C60140300F706F4 /* BookCellViewCell.swift */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				14967E941C329D5500E6AFC8 /* BookDetailViewController.swift in Sources */,
 				145154151C4968B100E508AD /* palabrasTableViewController.swift in Sources */,
 				14EF872C1C4C2F0C00B658E8 /* ViewController.swift in Sources */,
+				1401BEEA1C60140300F706F4 /* BookCellViewCell.swift in Sources */,
 				14FD34981C2F32FC00EFC94F /* MasterViewController.swift in Sources */,
 				14FD34961C2F32FC00EFC94F /* AppDelegate.swift in Sources */,
 				14FD34C81C2F378C00EFC94F /* JCOBooks.swift in Sources */,
