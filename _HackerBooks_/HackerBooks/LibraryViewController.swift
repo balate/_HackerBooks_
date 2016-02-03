@@ -25,8 +25,8 @@ class LibraryViewController: UITableViewController {
             //leemos el fichero JSON a un NSData, esto puede salir mal
             //Parseamos el fichero
             if let url = NSBundle.mainBundle().URLForResource("books_readable.json"),
-                data = NSData(contentsOfURL: url),
-                bookArray = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? JSONArray{
+                dataUrl = NSData(contentsOfURL: url),
+                bookArray = try NSJSONSerialization.JSONObjectWithData(dataUrl, options: .AllowFragments) as? JSONArray{
                     
                     
                     //todo es cojonudo!
@@ -105,10 +105,37 @@ class LibraryViewController: UITableViewController {
         
         if let data = NSData(contentsOfURL: (book?.image)!){
             cell.imageCell.image = UIImage(data: data)
+            
         }
         
+    
+      
 
         return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if (segue.identifier == "BookDetails") {
+        
+            let viewDetails: BooksDetailsViewController = segue.destinationViewController as! BooksDetailsViewController
+            
+            let indexPath = self.tableView.indexPathForSelectedRow
+            
+            let tag = model?.tagAtIndex(indexPath!.section)
+            let book = self.model?.booksForTag(tag!.name)! [indexPath!.row]
+            
+            
+            
+           viewDetails.titleDetail = (book?.title)!
+            viewDetails.authorsDetail = (book?.author)!
+            
+            
+            
+        }
+        
+       
+
     }
     
 

@@ -23,6 +23,6 @@ class ViewController: UIViewController {
         TextView.text = traductor
         
         super.viewDidLoad()
-        
+
     }
 }
