@@ -125,11 +125,9 @@ class LibraryViewController: UITableViewController {
             let tag = model?.tagAtIndex(indexPath!.section)
             let book = self.model?.booksForTag(tag!.name)! [indexPath!.row]
             
+         
             
-            
-           viewDetails.titleDetail = (book?.title)!
-            viewDetails.authorsDetail = (book?.author)!
-            
+            viewDetails.book = book
             
             
         }

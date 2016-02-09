@@ -10,47 +10,94 @@ import UIKit
 
 class BooksDetailsViewController: UIViewController {
 
-    var books : [JCOBooks] = []
+   
     
-    var titleDetail = ""
-    var authorsDetail = [String]()
-    var tagsDetail = [String]()
-    var imageDetail = UIImage()
-    var pdfDetail = String()
+    @IBOutlet weak var titleDetails: UILabel!
     
+    @IBOutlet weak var authorDetail: UILabel!
     
-    
+    @IBOutlet weak var tagDetails: UILabel!
 
+    @IBOutlet weak var imageDetails: UIImageView!
     
-    @IBOutlet weak var titleD: UILabel!{
+    
+    var book : JCOBooks?{
+        
+        
+        
+    
+    willSet {
+        }
     
         didSet{
         
-            self.titleD.text = titleDetail
-        }
-    }
-    
-    
-    @IBOutlet weak var AuthorD: UILabel!{
-    
-        didSet{
+            self.updateUI()
+ 
+            }
+
         
-            self.AuthorD.text = authorsDetail.joinWithSeparator(", ")
-        }
-    
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        self.updateUI()
+      /*
+        titleDetails.text = book!.title
+        
+        authorDetail.text = book!.author.joinWithSeparator(", ")
+        
+        tagDetails.text = book!.tags.joinWithSeparator(", ")
+        
+        let urlImg = book?.image
+        
+        if let imageUrl = NSData(contentsOfURL: urlImg!)
+        {
+            
+            imageDetails.image = UIImage(data: imageUrl)
+            if let imageUrl = NSData(contentsOfURL: (book?.image)!){
+            imageDetails.image = UIImage(data: imageUrl)
+        }
+        
+        }*/
     }
 
-    override func didReceiveMemoryWarning() {
+  override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+   
+    func updateUI(){
+        
+        
+        
+    if let book = self.book {
+    if let titleDetails  = self.titleDetails,
+            tagDetails   = self.tagDetails,
+            authorDetail = self.authorDetail,
+            imageDetails = self.imageDetails {
     
+    self.title = book.title
+    titleDetails.text = book.title
+    authorDetail.text = book.author.joinWithSeparator(", ")
+    tagDetails.text = book.tags.joinWithSeparator(", ")
+    
+    let urlImg = book.image
+            
+        if let imageUrl = NSData(contentsOfURL: urlImg)
+            {
+                imageDetails.image = UIImage(data: imageUrl)
+                
+                }
+            
+            }
+        }
+    }
+    
+  
 
     /*
     // MARK: - Navigation
@@ -61,5 +108,17 @@ class BooksDetailsViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "readPDF" {
+        
+            let readVC = segue.destinationViewController as? ReadViewController
+            
+            readVC!.pdf = book?.pdf
+        }
+        
+    }
+
 
 }
