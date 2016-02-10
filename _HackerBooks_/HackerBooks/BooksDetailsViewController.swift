@@ -45,24 +45,7 @@ class BooksDetailsViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         self.updateUI()
-      /*
-        titleDetails.text = book!.title
-        
-        authorDetail.text = book!.author.joinWithSeparator(", ")
-        
-        tagDetails.text = book!.tags.joinWithSeparator(", ")
-        
-        let urlImg = book?.image
-        
-        if let imageUrl = NSData(contentsOfURL: urlImg!)
-        {
-            
-            imageDetails.image = UIImage(data: imageUrl)
-            if let imageUrl = NSData(contentsOfURL: (book?.image)!){
-            imageDetails.image = UIImage(data: imageUrl)
-        }
-        
-        }*/
+    
     }
 
   override func didReceiveMemoryWarning() {
@@ -98,24 +81,14 @@ class BooksDetailsViewController: UIViewController {
     }
     
   
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "readPDF" {
         
             let readVC = segue.destinationViewController as? ReadViewController
-            
-            readVC!.pdf = book?.pdf
+           
+            readVC?.model = book
         }
         
     }
