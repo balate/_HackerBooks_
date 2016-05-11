@@ -74,7 +74,7 @@ func decode(JCOBook json: JSONDictionary ) throws -> StrictJCOBook {
     }
     
     
-    guard let urlImage = json[JSONKeys.pdf_url.rawValue] as? String,
+    guard let urlImage = json[JSONKeys.image_url.rawValue] as? String,
         image_url  = NSURL(string: urlImage) else {
             
             throw JSONProcessingErrors.WrongURLFormatForJSONResource

@@ -1,6 +1,6 @@
 //: Playground - noun: a place where people can play
 
-import Cocoa
+import Foundation
 
 
 //COMO MONTAR UN JSON PARA DESPUES DECODIFICAR
@@ -28,6 +28,9 @@ typealias JSONArray = [JSONDictionary]
 
 let str = "sunday, monday, happy days"
 print(str.capitalizedString)
+
+
+
 
 
 

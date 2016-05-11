@@ -102,12 +102,15 @@ class LibraryViewController: UITableViewController {
         
         cell.titleCell.text = book!.title
         cell.authorCell.text = book?.author.joinWithSeparator(", ")
+                
         
-        if let data = NSData(contentsOfURL: (book?.image)!){
-            cell.imageCell.image = UIImage(data: data)
+        
+       if let urlImg = NSData(contentsOfURL: (book?.image)!){
+            cell.imageCell.image = UIImage(data: urlImg)
             
         }
         
+       
     
       
 
@@ -124,6 +127,7 @@ class LibraryViewController: UITableViewController {
             
             let tag = model?.tagAtIndex(indexPath!.section)
             let book = self.model?.booksForTag(tag!.name)! [indexPath!.row]
+            
             
          
             

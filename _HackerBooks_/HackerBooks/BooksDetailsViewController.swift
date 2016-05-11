@@ -68,13 +68,15 @@ class BooksDetailsViewController: UIViewController {
     authorDetail.text = book.author.joinWithSeparator(", ")
     tagDetails.text = book.tags.joinWithSeparator(", ")
     
-    let urlImg = book.image
+   let urlImg = book.image
             
         if let imageUrl = NSData(contentsOfURL: urlImg)
             {
                 imageDetails.image = UIImage(data: imageUrl)
                 
                 }
+                
+                
             
             }
         }

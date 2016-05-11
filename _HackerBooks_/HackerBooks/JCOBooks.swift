@@ -18,6 +18,8 @@ class JCOBooks : Equatable{
     var image    : NSURL //image
     var pdf : NSURL //boton que te lleve a un pdfview
     
+
+    
     //MARK: - Initialization
     init (title : String,
         author  : [String],

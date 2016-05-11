@@ -12,6 +12,10 @@ import Foundation
 class JCOTags: Equatable, Comparable,Hashable {
     
     var name : String
+    
+
+    
+    
 
     
     //MARK: - Hashable
@@ -54,7 +58,7 @@ class JCOTags: Equatable, Comparable,Hashable {
             return "\(name)"
         }
     }
-    
+   
 }
 
 
@@ -78,6 +82,8 @@ func <(lhs:JCOTags, rhs:JCOTags) -> Bool{
     return (lhs.proxyForSorting < rhs.proxyForSorting)
     
 }
+
+
 
 
 
