@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		140788221C69241A0056E074 /* Captura de pantalla 2016-02-08 a las 20.29.11.png in Resources */ = {isa = PBXBuildFile; fileRef = 140788211C69241A0056E074 /* Captura de pantalla 2016-02-08 a las 20.29.11.png */; };
 		141CA8C11C53F3130023D94E /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141CA8C01C53F3130023D94E /* LibraryViewController.swift */; };
 		147206451C53859100583226 /* TableLibrary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147206441C53859100583226 /* TableLibrary.storyboard */; };
 		1475F20C1C6A7D4800F37482 /* ReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1475F20B1C6A7D4800F37482 /* ReadViewController.swift */; };
@@ -49,8 +48,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		140788211C69241A0056E074 /* Captura de pantalla 2016-02-08 a las 20.29.11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Captura de pantalla 2016-02-08 a las 20.29.11.png"; sourceTree = "<group>"; };
-		141455C01C529F6D009D0E1B /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		141CA8C01C53F3130023D94E /* LibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		147206441C53859100583226 /* TableLibrary.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TableLibrary.storyboard; sourceTree = "<group>"; };
 		1475F20B1C6A7D4800F37482 /* ReadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadViewController.swift; sourceTree = "<group>"; };
@@ -128,7 +125,6 @@
 		14FD34891C2F32FC00EFC94F = {
 			isa = PBXGroup;
 			children = (
-				141455C01C529F6D009D0E1B /* MyPlayground.playground */,
 				14FD34941C2F32FC00EFC94F /* HackerBooks */,
 				14FD34AB1C2F32FD00EFC94F /* HackerBooksTests */,
 				14FD34B61C2F32FD00EFC94F /* HackerBooksUITests */,
@@ -183,7 +179,6 @@
 			isa = PBXGroup;
 			children = (
 				14CB57521C6284D600E52AA1 /* favourites.png */,
-				140788211C69241A0056E074 /* Captura de pantalla 2016-02-08 a las 20.29.11.png */,
 				14967E921C329D2900E6AFC8 /* controller */,
 				14EF87311C50286300B658E8 /* books_readable.json */,
 				14967E8F1C31C44400E6AFC8 /* StoryBoards */,
@@ -315,7 +310,6 @@
 				14EF87321C50286300B658E8 /* books_readable.json in Resources */,
 				147206451C53859100583226 /* TableLibrary.storyboard in Resources */,
 				14FD349D1C2F32FD00EFC94F /* Main.storyboard in Resources */,
-				140788221C69241A0056E074 /* Captura de pantalla 2016-02-08 a las 20.29.11.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
