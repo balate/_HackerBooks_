@@ -7,11 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		140788201C6923E70056E074 /* leer.png in Resources */ = {isa = PBXBuildFile; fileRef = 1407881F1C6923E70056E074 /* leer.png */; };
 		140788221C69241A0056E074 /* Captura de pantalla 2016-02-08 a las 20.29.11.png in Resources */ = {isa = PBXBuildFile; fileRef = 140788211C69241A0056E074 /* Captura de pantalla 2016-02-08 a las 20.29.11.png */; };
 		141CA8C11C53F3130023D94E /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141CA8C01C53F3130023D94E /* LibraryViewController.swift */; };
-		145154131C4967FA00E508AD /* palabrasStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 145154121C4967FA00E508AD /* palabrasStoryboard.storyboard */; };
-		145154151C4968B100E508AD /* palabrasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145154141C4968B100E508AD /* palabrasTableViewController.swift */; };
 		147206451C53859100583226 /* TableLibrary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147206441C53859100583226 /* TableLibrary.storyboard */; };
 		1475F20C1C6A7D4800F37482 /* ReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1475F20B1C6A7D4800F37482 /* ReadViewController.swift */; };
 		148A4C611C5BE50200E1AEBE /* JCOTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148A4C601C5BE50200E1AEBE /* JCOTags.swift */; };
@@ -52,12 +49,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1407881F1C6923E70056E074 /* leer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leer.png; sourceTree = "<group>"; };
 		140788211C69241A0056E074 /* Captura de pantalla 2016-02-08 a las 20.29.11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Captura de pantalla 2016-02-08 a las 20.29.11.png"; sourceTree = "<group>"; };
 		141455C01C529F6D009D0E1B /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		141CA8C01C53F3130023D94E /* LibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
-		145154121C4967FA00E508AD /* palabrasStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = palabrasStoryboard.storyboard; sourceTree = "<group>"; };
-		145154141C4968B100E508AD /* palabrasTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = palabrasTableViewController.swift; sourceTree = "<group>"; };
 		147206441C53859100583226 /* TableLibrary.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TableLibrary.storyboard; sourceTree = "<group>"; };
 		1475F20B1C6A7D4800F37482 /* ReadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadViewController.swift; sourceTree = "<group>"; };
 		148A4C601C5BE50200E1AEBE /* JCOTags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JCOTags.swift; sourceTree = "<group>"; };
@@ -114,7 +108,6 @@
 		14967E8F1C31C44400E6AFC8 /* StoryBoards */ = {
 			isa = PBXGroup;
 			children = (
-				145154121C4967FA00E508AD /* palabrasStoryboard.storyboard */,
 				147206441C53859100583226 /* TableLibrary.storyboard */,
 			);
 			name = StoryBoards;
@@ -123,7 +116,6 @@
 		14967E921C329D2900E6AFC8 /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				145154141C4968B100E508AD /* palabrasTableViewController.swift */,
 				14EF872B1C4C2F0C00B658E8 /* ViewController.swift */,
 				141CA8C01C53F3130023D94E /* LibraryViewController.swift */,
 				14CB57541C6291F400E52AA1 /* BooksDetailsViewController.swift */,
@@ -192,7 +184,6 @@
 			children = (
 				14CB57521C6284D600E52AA1 /* favourites.png */,
 				140788211C69241A0056E074 /* Captura de pantalla 2016-02-08 a las 20.29.11.png */,
-				1407881F1C6923E70056E074 /* leer.png */,
 				14967E921C329D2900E6AFC8 /* controller */,
 				14EF87311C50286300B658E8 /* books_readable.json */,
 				14967E8F1C31C44400E6AFC8 /* StoryBoards */,
@@ -320,11 +311,9 @@
 			files = (
 				14FD34A21C2F32FD00EFC94F /* LaunchScreen.storyboard in Resources */,
 				14CB57531C6284D600E52AA1 /* favourites.png in Resources */,
-				140788201C6923E70056E074 /* leer.png in Resources */,
 				14FD349F1C2F32FD00EFC94F /* Assets.xcassets in Resources */,
 				14EF87321C50286300B658E8 /* books_readable.json in Resources */,
 				147206451C53859100583226 /* TableLibrary.storyboard in Resources */,
-				145154131C4967FA00E508AD /* palabrasStoryboard.storyboard in Resources */,
 				14FD349D1C2F32FD00EFC94F /* Main.storyboard in Resources */,
 				140788221C69241A0056E074 /* Captura de pantalla 2016-02-08 a las 20.29.11.png in Resources */,
 			);
@@ -353,7 +342,6 @@
 			files = (
 				14967E8C1C3063AE00E6AFC8 /* JCOLibrary.swift in Sources */,
 				14FD349A1C2F32FC00EFC94F /* DetailViewController.swift in Sources */,
-				145154151C4968B100E508AD /* palabrasTableViewController.swift in Sources */,
 				1475F20C1C6A7D4800F37482 /* ReadViewController.swift in Sources */,
 				14EF872C1C4C2F0C00B658E8 /* ViewController.swift in Sources */,
 				14CB57571C6293D800E52AA1 /* BookCellViewCell.swift in Sources */,

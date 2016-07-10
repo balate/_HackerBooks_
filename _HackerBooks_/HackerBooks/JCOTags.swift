@@ -33,45 +33,44 @@ class JCOTags: Equatable, Comparable,Hashable {
     }
     
     convenience init(){
-        self.init(name: "hola")
+        self.init(name: "")
     }
     
+   
     //Normalize Name
     func normalizedName() -> String {
     
          return self.name.capitalizedString
     }
     
+    
     //MARK: - Proxies
-    var proxyForComparison : String {
-    
-        get {
+    var proxyForComparison : String{
         
+        get{
             return "\(name)"
         }
     }
     
-    var proxyForSorting : String {
-    
-        get {
+    var proxyForSorting : String{
         
+        get{
             return "\(name)"
         }
     }
-   
 }
 
 
 //MARK: - Operators
+
 func ==(lhs:JCOTags, rhs:JCOTags) -> Bool{
     
-    if (lhs.name == rhs.name){
+if (lhs.name.lowercaseString == rhs.name.lowercaseString){
         return true
     }else{
         return false
     }
-    
-    
+
 }
 
 
@@ -82,9 +81,5 @@ func <(lhs:JCOTags, rhs:JCOTags) -> Bool{
     return (lhs.proxyForSorting < rhs.proxyForSorting)
     
 }
-
-
-
-
 
 

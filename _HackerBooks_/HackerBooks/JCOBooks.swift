@@ -41,80 +41,37 @@ class JCOBooks : Equatable{
         
         get {
             
-            return "\(title)\(author)\(tags)\(pdf)"
+           return "A\(title)\(author)\(tags)\(image)\(pdf)"
             
         }
         
     }
-    
+   
     var proxyForSorting : String {
     
-        return "\(title)\(author)\(tags)"
-    
-    }
-    
-    
-    /*
-    //función para devolver un string bonito de los autores
-    func descAuthor()-> String{
         
-        var aux : String = ""
-        if([self.author .count] == 1){
-            return self.author[0]
-            
-        }else{
-            aux = StringLiteralType("%@", self.author[0])
-            for element  in self.author{
-                
-                aux = StringLiteralType(stringInterpolation: "%@ , %@", aux, element)
-                
-            }
-            
-            return aux
-            
-        }
+      //return "A\(title)\(author)\(tags)"
+        return "A\(title)\(author)\(tags)\(image)\(pdf)"
+    
     }
-
-    */
-   /*
-    //función para devolver un string bonito de los tags
-    func descTags()-> String{
-        
-        var auxTag : String = ""
-        if([self.tags .count] == 1){
-            return self.tags[0]
-            
-        }else{
-            auxTag = StringLiteralType("%@", self.tags[0])
-            for element  in self.tags{
-                
-                auxTag = StringLiteralType(stringInterpolation: "%@ , %@", auxTag, element)
-                
-            }
-            
-            return auxTag
-            
-        }
-    }
-
+    
+    
+  
 
 
 }
-*/
 
-
-}
 
 //MARK: - Operators
 
 func ==(lhs:JCOBooks, rhs:JCOBooks) -> Bool{
 
-    if (lhs.title == rhs.title){
+    if (lhs.title.lowercaseString == rhs.title.lowercaseString){
         return true
     }else{
         return false
     }
-    
+  
     
 }
 
@@ -123,31 +80,13 @@ func ==(lhs:JCOBooks, rhs:JCOBooks) -> Bool{
 func <(lhs:JCOBooks, rhs:JCOBooks) -> Bool{
 
 
+    //return (lhs.proxyForSorting < rhs.proxyForSorting)
+    
     return (lhs.proxyForSorting < rhs.proxyForSorting)
+    
 
 }
 
 
 
 
-
-//función para devolver un string bonito de los autores
-extension JCOBooks: CustomStringConvertible{
-    var description: String{
-        get{
-            if title != "" {
-                return "<\(self.dynamicType): \(title)>"
-            }else{
-                return "<\(self.dynamicType)>"
-            }
-        }
-    }
-}
-
-
-/*
-func == (lhs : JCOBooks, rhs: JCOBooks) -> Bool{
-
-    return lhs.title.lowercaseString == rhs.title.lowercaseString
-
-}*/

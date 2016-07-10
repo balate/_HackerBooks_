@@ -13,95 +13,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
     var window: UIWindow?
     
-    var model : JCOLibrary?
+    //limpio código y paso a usar LibraryViewController
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch
-       // _ = self.window!.rootViewController as! palabrasTableViewController
-        //self.window!.rootViewController as! palabrasTableViewController
-        
-            //let viewController = self.window!.rootViewController as! MasterViewController
-        //let splitViewController = self.window!.rootViewController as! UISplitViewController
-        //let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
-        //navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem()
-     /*
-        do {
     
+        
                 
-                if let url = NSBundle.mainBundle().URLForResource("books_readable.json"),
-                    data = NSData(contentsOfURL: url),
-                    jsons = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? JSONArray {
-                        
-
-                        return model = JCOLibrary(books: decode(JCOBooks: jsons))
-            
-        
-            }
-        
-        }catch{
-            
-           // print("No hay manera")
-            fatalError("No se ha podido crear el model")
-        
-        }*/
-        
-      //splitViewController.delegate = self
-        
-
-        // ----- Ejemplo de arrancar a los chucknorris  ------
-        
-        //1º. Creo mi storyBoard a manubrio
-        let sb = UIStoryboard(name:"TableLibrary",bundle: nil)
-        
-        //2º. ontener ViewControllesr
-        let rootVC = sb.instantiateInitialViewController()
-        
-        //3º. Crear una window , pasarle el ViewController y por último hacerlo visible
-        window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        window?.rootViewController = rootVC
-        window?.makeKeyAndVisible()
-        
-        
-        
-            //  ----------- TDD PARA POBRES -----   (No me funciona...)
-        
-      /*  do {
-            
-            if let url = NSBundle.mainBundle().URLForResource("books_readable.json"),
-                    data = NSData(contentsOfURL: url),
-                    JsonBook = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? JSONArray {
-                        
-                        
-        
-         /*
-                        //Ver un JSONObject que este dentro del JSONArray
-                        
-                        // faltaria hacerme un inicilizador de books con el arrayOfBooks y asignarselo a gitJSON
-                        let gitJSON =
-                        
-                        do{
-                            
-                            let stricGit = try decode(JCOBooks: gitJSON )
-                            let ProGit = JCOBooks(stricGit)
-        
-                        }catch{
-                        
-                        print ("la cagastes al extraer el JSON")
-                        
-                        }
-        
-                */
-                    
-            }
-            
-        }catch{
-            
-            print("la cagamos...al entrar en el JSON")
-            
-        }
-        */
-        
         return true
     }
 

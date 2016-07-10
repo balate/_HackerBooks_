@@ -12,6 +12,8 @@ class LibraryViewController: UITableViewController {
     
     var model : JCOLibrary?
     
+
+    
     
     // funcion que extrae el JSON de libros
     private func decodeJSON() ->[StrictJCOBook]?{
@@ -24,7 +26,8 @@ class LibraryViewController: UITableViewController {
             //Obtener la url del ficehero
             //leemos el fichero JSON a un NSData, esto puede salir mal
             //Parseamos el fichero
-            if let url = NSBundle.mainBundle().URLForResource("books_readable.json"),
+            //if let url = NSBundle.mainBundle().URLForResource("books_readable.json"), //URLLocal para ir más rápido
+            if let url = NSURL(string: JCOLibrary.urlLibrary),
                 dataUrl = NSData(contentsOfURL: url),
                 bookArray = try NSJSONSerialization.JSONObjectWithData(dataUrl, options: .AllowFragments) as? JSONArray{
                     
@@ -97,8 +100,7 @@ class LibraryViewController: UITableViewController {
         let tag = self.model?.tagAtIndex(indexPath.section)!
         let book = self.model?.booksForTag(tag!.name)! [indexPath.row]
         
-        //cell.textLabel?.text = book!.title
-        //cell.detailTextLabel?.text = book?.author.joinWithSeparator(",")
+       
         
         cell.titleCell.text = book!.title
         cell.authorCell.text = book?.author.joinWithSeparator(", ")

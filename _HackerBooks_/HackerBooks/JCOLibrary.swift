@@ -13,8 +13,7 @@ import UIKit
 class JCOLibrary {
     
     //MARK: - Properties
-    static let urlHttps = "https://t.co/K9ziV0z3SJ"
-    static let urlLocal = "JCOBooks"
+    static let urlLibrary = "https://t.co/K9ziV0z3SJ"
     var library : [JCOTags : [JCOBooks]]
     
     var countTags: Int{
@@ -22,6 +21,8 @@ class JCOLibrary {
             return self.library.keys.count
         }
     }
+    
+    
     
     //MARK: - Initialization
     init (arrayOfBooks books:[JCOBooks]){
@@ -67,13 +68,13 @@ class JCOLibrary {
             
             return nil
         }
-        
+       
         books.sortInPlace({ (s1: JCOBooks, s2: JCOBooks) -> Bool in
             
-            return s1.title.lowercaseString > s2.title.lowercaseString
-            
+         return s1.title.lowercaseString < s2.title.lowercaseString
+          
         })
-        
+       
         return books
     }
     
@@ -95,6 +96,7 @@ class JCOLibrary {
         
     }
     
+    
     //function sorted tags
     func tagSorted()->[JCOTags]{
         
@@ -103,12 +105,13 @@ class JCOLibrary {
         keys.sortInPlace({(s1 : JCOTags, s2 : JCOTags) -> Bool in
             
             
-            if (s1.name.lowercaseString == "Favorite".lowercaseString){
+            if (s1.name.lowercaseString == s2.name.lowercaseString){
                 return true
-            }else if (s2.name.lowercaseString == "Favorite".lowercaseString){
+          }
+                else if (s2.name.lowercaseString == s1.name.lowercaseString){
                 return false
             }else{
-                return s1 > s2
+                return s1 < s2
             }
             
             }

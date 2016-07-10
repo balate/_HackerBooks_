@@ -9,7 +9,8 @@
 import UIKit
 
 
-/*
+/* 
+//Estructura que espero que venga el objeto JSON
 {
 "authors": "Marijn Haverbeke ",
 "image_url": "http://hackershelf.com/media/cache/e5/27/e527064919530802af898a4798318ab9.jpg",
