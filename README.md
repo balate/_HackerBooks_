@@ -1,10 +1,10 @@
 
 
 
-###_HackerBooks_
+#_HackerBooks_
 App IOS para leer libros con Iphone desarrollado con tecnolgía Swift
 
-## - Modelo
+##Modelo
 
 **JCOBook:** representa un libro.
 
@@ -12,7 +12,7 @@ App IOS para leer libros con Iphone desarrollado con tecnolgía Swift
 
 **JCOTags:** representa las etiquetas o tematica de los libros.
 
-## - Controladores
+##Controladores
 **LibraryViewController:** El controlador encargado de mostrar la lista de todos los libros.
 
 **BookCellViewCell:** El controlador que se encarga de mostrar una celda personalizada de la lista (LibraryViewController).
@@ -21,22 +21,22 @@ App IOS para leer libros con Iphone desarrollado con tecnolgía Swift
 
 **ReadViewController**: El controlador encargado de mostrar el PDF.
 
-## - Vista
+##Vista
 **TableLibrary.storyboard**: Se encargara de la gestión de las Escenas (vistas) que representa cada controlador (Lista, celda persanalizada, detalle y vista PDF) 
 
-## - Segues
+##Segues
 A traves del uso de los segues se realiza la transición entre las Escenas (Vistas)
 
-## - Cuestiones sobre la Practica
+###Cuestiones sobre la Practica
 
-# como almacenarías la propiedad booleana isFavorite
+###Como almacenarías la propiedad booleana isFavorite
 En mi caso he usado UserDefaults
 
-# Como pasar la informacion desde JCOBooks a libraryViewController?
+###Como pasar la informacion desde JCOBooks a libraryViewController?
 Se pueden usar Notficaciones o Delegado.
 
-##Extras
-#Qué funcionalidades le añaderías antes de subirla a la App Store?
+#Extras
+##Qué funcionalidades le añaderías antes de subirla a la App Store?
 
 - Añadir un login
 
