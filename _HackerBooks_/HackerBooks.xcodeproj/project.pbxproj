@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		050964FE1D3B0254007BE485 /* read.png in Resources */ = {isa = PBXBuildFile; fileRef = 050964FD1D3B0254007BE485 /* read.png */; };
 		141CA8C11C53F3130023D94E /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141CA8C01C53F3130023D94E /* LibraryViewController.swift */; };
 		147206451C53859100583226 /* TableLibrary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147206441C53859100583226 /* TableLibrary.storyboard */; };
 		1475F20C1C6A7D4800F37482 /* ReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1475F20B1C6A7D4800F37482 /* ReadViewController.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		050964FD1D3B0254007BE485 /* read.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = read.png; sourceTree = "<group>"; };
 		141CA8C01C53F3130023D94E /* LibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		147206441C53859100583226 /* TableLibrary.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TableLibrary.storyboard; sourceTree = "<group>"; };
 		1475F20B1C6A7D4800F37482 /* ReadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +104,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		050964FB1D3ADD7C007BE485 /* helper */ = {
+			isa = PBXGroup;
+			children = (
+				14EF872F1C5027CB00B658E8 /* FoundationExtension.swift */,
+				14EF872D1C4EC5DE00B658E8 /* JSONProcesing.swift */,
+			);
+			name = helper;
+			sourceTree = "<group>";
+		};
+		050964FC1D3AFE21007BE485 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				050964FD1D3B0254007BE485 /* read.png */,
+				14CB57521C6284D600E52AA1 /* favourites.png */,
+			);
+			name = resources;
+			sourceTree = "<group>";
+		};
 		14967E8F1C31C44400E6AFC8 /* StoryBoards */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,12 +198,12 @@
 		14FD34C51C2F349300EFC94F /* App */ = {
 			isa = PBXGroup;
 			children = (
-				14CB57521C6284D600E52AA1 /* favourites.png */,
+				050964FC1D3AFE21007BE485 /* resources */,
+				050964FB1D3ADD7C007BE485 /* helper */,
 				14967E921C329D2900E6AFC8 /* controller */,
 				14EF87311C50286300B658E8 /* books_readable.json */,
 				14967E8F1C31C44400E6AFC8 /* StoryBoards */,
 				14FD34C61C2F373500EFC94F /* Models */,
-				14EF872F1C5027CB00B658E8 /* FoundationExtension.swift */,
 			);
 			name = App;
 			sourceTree = "<group>";
@@ -193,7 +213,6 @@
 			children = (
 				14967E8B1C3063AE00E6AFC8 /* JCOLibrary.swift */,
 				14FD34C71C2F378C00EFC94F /* JCOBooks.swift */,
-				14EF872D1C4EC5DE00B658E8 /* JSONProcesing.swift */,
 				148A4C601C5BE50200E1AEBE /* JCOTags.swift */,
 			);
 			name = Models;
@@ -310,6 +329,7 @@
 				14EF87321C50286300B658E8 /* books_readable.json in Resources */,
 				147206451C53859100583226 /* TableLibrary.storyboard in Resources */,
 				14FD349D1C2F32FD00EFC94F /* Main.storyboard in Resources */,
+				050964FE1D3B0254007BE485 /* read.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

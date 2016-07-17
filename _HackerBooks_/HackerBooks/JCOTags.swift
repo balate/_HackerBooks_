@@ -9,7 +9,7 @@
 import Foundation
 
 
-class JCOTags: Equatable, Comparable,Hashable {
+class JCOTags: Equatable,Hashable {
     
     var name : String
     
@@ -58,6 +58,7 @@ class JCOTags: Equatable, Comparable,Hashable {
             return "\(name)"
         }
     }
+    
 }
 
 
@@ -65,11 +66,18 @@ class JCOTags: Equatable, Comparable,Hashable {
 
 func ==(lhs:JCOTags, rhs:JCOTags) -> Bool{
     
-if (lhs.name.lowercaseString == rhs.name.lowercaseString){
+    // 1er caso: son el mismo objeto
+    guard !(lhs === rhs) else{
         return true
-    }else{
+    }
+    
+    // 2do caso: tienen clases distintas
+    guard lhs.dynamicType == rhs.dynamicType else{
         return false
     }
+    
+    // Caso genérico
+    return (lhs.proxyForComparison == rhs.proxyForComparison)
 
 }
 
@@ -77,9 +85,16 @@ if (lhs.name.lowercaseString == rhs.name.lowercaseString){
 
 func <(lhs:JCOTags, rhs:JCOTags) -> Bool{
     
+    if (lhs.name == "Favourites"){
+        return true
+    }
     
+    if (rhs.name == "Favourites") {
+        return false
+    }
     return (lhs.proxyForSorting < rhs.proxyForSorting)
     
 }
+
 
 

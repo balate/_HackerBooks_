@@ -20,6 +20,57 @@ class BooksDetailsViewController: UIViewController {
 
     @IBOutlet weak var imageDetails: UIImageView!
     
+    @IBAction func changeStatusFavourite(sender: AnyObject) {
+        
+        let aux : Bool = (book?.isFavourite)!;
+        
+        book?.isFavourite = !aux
+        if (book?.isFavourite)! {
+            
+            book?.tags.append("Favourite")
+            var favoritos : [String]
+            let user : NSUserDefaults = NSUserDefaults.standardUserDefaults()
+            if let _=user.objectForKey("Favourites"){
+                favoritos = user.objectForKey("Favourites") as! [String]
+                favoritos.append((book?.title)!)
+            }else{
+                favoritos = [(book?.title)!]
+            }
+  
+            user.setObject(favoritos, forKey: "Favourites")
+            user.synchronize()
+            
+            
+        }else{
+            
+            book?.tags.removeLast()
+            
+            var favoritos : [String]
+            let user : NSUserDefaults = NSUserDefaults.standardUserDefaults()
+            if let _=user.objectForKey("Favourites"){
+                
+                favoritos = user.objectForKey("Favourites") as! [String]
+                
+                if favoritos.count == 1 {
+                    user.removeObjectForKey("Favourites")
+                }else{
+                
+                    favoritos.removeAtIndex(favoritos.indexOf((book?.title)!)!)
+                
+                    
+                    user.setObject(favoritos, forKey: "Favourites")
+                    user.synchronize()
+                    
+                }
+                
+            }
+
+            
+        }
+        
+        self.updateUI()
+        
+    }
     
     var book : JCOBooks?{
         

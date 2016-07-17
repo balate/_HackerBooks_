@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="SfR-8b-ozj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="SfR-8b-ozj">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -96,6 +96,9 @@
                                         <exclude reference="LKo-OE-9Lh"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="changeStatusFavourite:" destination="tEN-N1-lFv" eventType="touchUpInside" id="rzF-Xq-PL9"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LmL-b0-LUV" userLabel="ReadDetails">
                                 <rect key="frame" x="87" y="387" width="63" height="62"/>
@@ -105,7 +108,7 @@
                                     <constraint firstAttribute="height" constant="51" id="MG1-5m-jqb"/>
                                     <constraint firstAttribute="height" constant="62" id="t4u-SU-B8z"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="Captura de pantalla 2016-02-08 a las 20.29.11.png"/>
+                                <state key="normal" title="Button" image="read.png"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="MG1-5m-jqb"/>
@@ -274,7 +277,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Captura de pantalla 2016-02-08 a las 20.29.11.png" width="181" height="194"/>
         <image name="favourites.png" width="512" height="512"/>
+        <image name="read.png" width="256" height="256"/>
     </resources>
 </document>

@@ -149,7 +149,7 @@ func decode(JCOBooks json: JSONArray) -> [StrictJCOBook] {
 
 extension JCOBooks {
     
-    //Init que acepta los parametros empaquetados en un StrictJCOBook
+    //Init que acepta los parametros empaquetados en un StrictJCOBoo
     convenience init (StrictJCOBook c: StrictJCOBook){
         
         //Llamar al inicializador designado pasandole el StrictJCOBook
@@ -158,7 +158,8 @@ extension JCOBooks {
             author  : c.authors ,
             tags    : c.tags,
             image   : c.image,
-            pdf     : c.pdf)
+            pdf     : c.pdf,
+            isFavourite: false)
         
     }
     
@@ -181,7 +182,7 @@ extension JCOLibrary {
         book.append(c)
         
         }
-
+        
         self.init(arrayOfBooks: book)
         
     }

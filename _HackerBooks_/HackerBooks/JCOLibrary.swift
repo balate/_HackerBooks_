@@ -102,21 +102,7 @@ class JCOLibrary {
         
         var keys : [JCOTags]
         keys = Array (self.library.keys)
-        keys.sortInPlace({(s1 : JCOTags, s2 : JCOTags) -> Bool in
-            
-            
-            if (s1.name.lowercaseString == s2.name.lowercaseString){
-                return true
-          }
-                else if (s2.name.lowercaseString == s1.name.lowercaseString){
-                return false
-            }else{
-                return s1 < s2
-            }
-            
-            }
-        )
-        
+        keys.sortInPlace(<)
         return keys
         
     }

@@ -56,15 +56,113 @@ class LibraryViewController: UITableViewController {
         title = " HackerBooks List "
         
         //crear modelo
+        let ud : NSUserDefaults =  NSUserDefaults.standardUserDefaults()
+        let book1s : [StrictJCOBook]
         if let books = decodeJSON(){
-         
+            book1s = books
             model = JCOLibrary(books: books)
-           
-        
+            
+            
         }else{
-        
+            
             fatalError("Se jodio y no se pudo parsear")
         }
+        
+        if let f = ud.objectForKey("Favourites"){
+            if !(model?.library.keys.contains(JCOTags(name: "Favourites")))!{
+                
+                var booksFavourite : [JCOBooks] = Array()
+                
+                
+                for bf in ud.objectForKey("Favourites") as! [String]{
+                    for b in book1s {
+                        if b.title == bf{
+                            for tag in b.tags {
+                                var booksfortag : [JCOBooks] = (model?.booksForTag(tag))!
+                                var i : NSInteger = 0
+                                for b2 in booksfortag {
+                                    if b2.title == b.title {
+                                        var booksfinal : [JCOBooks] = (model?.booksForTag(tag))!
+                                        booksfinal.removeAtIndex(i)
+                                        var libromodificado : JCOBooks = JCOBooks(StrictJCOBook: b)
+                                        libromodificado.tags.append("Favourite")
+                                        libromodificado.isFavourite = true
+                                        booksfinal.append(libromodificado)
+                                        self.model?.library[JCOTags(name: tag)] = booksfinal                                    }
+                                    i += 1
+                                }
+                                
+                            }
+                            var libromodificado2 : JCOBooks = JCOBooks(StrictJCOBook: b)
+                            libromodificado2.tags.append("Favourites")
+                            libromodificado2.isFavourite = true
+                            booksFavourite.append(libromodificado2)
+                        }
+                    }
+                }
+                self.model!.library[JCOTags(name: "Favourites")] = booksFavourite
+            }
+            
+        }
+
+
+    }
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        //crear modelo
+        let ud : NSUserDefaults =  NSUserDefaults.standardUserDefaults()
+        let book1s : [StrictJCOBook]
+        if let books = decodeJSON(){
+            book1s = books
+            model = JCOLibrary(books: books)
+            
+            
+        }else{
+            
+            fatalError("Se jodio y no se pudo parsear")
+        }
+        
+        if let f = ud.objectForKey("Favourites"){
+            if !(model?.library.keys.contains(JCOTags(name: "Favourites")))!{
+                
+                var booksFavourite : [JCOBooks] = Array()
+                
+                
+                for bf in ud.objectForKey("Favourites") as! [String]{
+                    for b in book1s {
+                        if b.title == bf{
+                            for tag in b.tags {
+                                var booksfortag : [JCOBooks] = (model?.booksForTag(tag))!
+                                var i : NSInteger = 0
+                                for b2 in booksfortag {
+                                    if b2.title == b.title {
+                                        var booksfinal : [JCOBooks] = (model?.booksForTag(tag))!
+                                        booksfinal.removeAtIndex(i)
+                                        var libromodificado : JCOBooks = JCOBooks(StrictJCOBook: b)
+                                        libromodificado.tags.append("Favourite")
+                                        libromodificado.isFavourite = true
+                                        booksfinal.append(libromodificado)
+                                        self.model?.library[JCOTags(name: tag)] = booksfinal                                    }
+                                    i += 1
+                                }
+                                
+                            }
+                            var libromodificado2 : JCOBooks = JCOBooks(StrictJCOBook: b)
+                            libromodificado2.tags.append("Favourites")
+                            libromodificado2.isFavourite = true
+                            booksFavourite.append(libromodificado2)
+                        }
+                    }
+                }
+                self.model!.library[JCOTags(name: "Favourites")] = booksFavourite
+            }
+            
+        }
+        
+        self.tableView.reloadData()
+
         
     }
 
@@ -105,7 +203,11 @@ class LibraryViewController: UITableViewController {
         cell.titleCell.text = book!.title
         cell.authorCell.text = book?.author.joinWithSeparator(", ")
                 
-        
+        if (book?.isFavourite)! {
+            cell.backgroundColor = UIColor.greenColor()
+        }else{
+            cell.backgroundColor = UIColor.whiteColor()
+        }
         
        if let urlImg = NSData(contentsOfURL: (book?.image)!){
             cell.imageCell.image = UIImage(data: urlImg)

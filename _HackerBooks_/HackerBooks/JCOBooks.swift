@@ -12,25 +12,29 @@ import UIKit
 class JCOBooks : Equatable{
 
     //MARK: - Properties
-    let title    : String //label
-    let author   : [String] //label
-    let tags     : [String] //label
-    var image    : NSURL //image
-    var pdf : NSURL //boton que te lleve a un pdfview
+    let title       : String //label
+    let author      : [String] //label
+    var tags        : [String] //label
+    var image       : NSURL //image
+    var pdf         : NSURL //boton que te lleve a un pdfview
+    var isFavourite : Bool
     
 
     
     //MARK: - Initialization
-    init (title : String,
-        author  : [String],
-        tags    : [String],
-        image   : NSURL,
-        pdf     : NSURL) {
+    init (title     : String,
+        author      : [String],
+        tags        : [String],
+        image       : NSURL,
+        pdf         : NSURL,
+        isFavourite : Bool) {
+        
             self.title = title
             self.author = author
             self.tags = tags
             self.image = image
             self.pdf = pdf
+            self.isFavourite = isFavourite
     
     }
     
