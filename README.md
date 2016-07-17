@@ -21,6 +21,9 @@ App IOS para leer libros con Iphone desarrollado con tecnolgía Swift
 
 **ReadViewController**: El controlador encargado de mostrar el PDF.
 
+##Helper
+**JSONProcesing** Es la clase encargada de decodificar el fichero JSON 
+
 ##Vista
 **TableLibrary.storyboard**: Se encargara de la gestión de las Escenas (vistas) que representa cada controlador (Lista, celda persanalizada, detalle y vista PDF) 
 
