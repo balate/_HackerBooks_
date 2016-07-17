@@ -35,7 +35,7 @@ A traves del uso de los segues se realiza la transición entre las Escenas (Vist
 ###Como almacenarías la propiedad booleana isFavorite
 En mi caso he usado UserDefaults
 
-##ReloadData de UITableView ¿Es una aberración desde el punto de vista de rendimiento (volver a cargar datos que en su mayoría ya estaban correctos)?. Explica por qué no es así. ¿Hay una forma alternativa? ¿Cuándo merece la pena usarlo?
+###ReloadData de UITableView ¿Es una aberración desde el punto de vista de rendimiento (volver a cargar datos que en su mayoría ya estaban correctos)?. Explica por qué no es así. ¿Hay una forma alternativa? ¿Cuándo merece la pena usarlo?
 
 Por un lado porque solamente se actualiza las celdas que se muestran en la vista del dispoitivo. Y por otro porque el modelo que usa UITableView esta en local.
 
