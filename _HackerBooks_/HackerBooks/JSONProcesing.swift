@@ -59,6 +59,7 @@ enum JSONProcessingErrors : ErrorType{
     case ResourcePointedByURLNotReachable
     case JSONParsingError
     case WrongJSONFormat
+    
 
 }
 
