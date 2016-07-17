@@ -73,7 +73,6 @@ class LibraryViewController: UITableViewController {
                 
                 var booksFavourite : [JCOBooks] = Array()
                 
-                
                 for bf in ud.objectForKey("Favourites") as! [String]{
                     for b in book1s {
                         if b.title == bf{
