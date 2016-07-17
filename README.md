@@ -30,10 +30,14 @@ App IOS para leer libros con Iphone desarrollado con tecnolgía Swift
 ##Segues
 A traves del uso de los segues se realiza la transición entre las Escenas (Vistas)
 
-###Cuestiones sobre la Practica
+##Cuestiones sobre la Practica
 
 ###Como almacenarías la propiedad booleana isFavorite
 En mi caso he usado UserDefaults
+
+##ReloadData de UITableView ¿Es una aberración desde el punto de vista de rendimiento (volver a cargar datos que en su mayoría ya estaban correctos)?. Explica por qué no es así. ¿Hay una forma alternativa? ¿Cuándo merece la pena usarlo?
+
+Por un lado porque solamente se actualiza las celdas que se muestran en la vista del dispoitivo. Y por otro porque el modelo que usa UITableView esta en local.
 
 ###Como pasar la informacion desde JCOBooks a libraryViewController?
 Se pueden usar Notficaciones o Delegado.
