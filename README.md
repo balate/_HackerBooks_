@@ -1,7 +1,7 @@
 
 
 
-### _HackerBooks_
+###_HackerBooks_
 App IOS para leer libros con Iphone desarrollado con tecnolgía Swift
 
 ## - Modelo
@@ -41,13 +41,4 @@ Se pueden usar Notficaciones o Delegado.
 - Añadir a la vista del libro, editor de texto para añadir marcas, subrayado etc... 
 
 
-
-
-
-
-
-
-
-
-Application eBook Reader for Iphone. The app has been developed in Swift code. 
-#Author : Javier Contreras Ocon 
+#Author: Javier Contreras Ocon 
